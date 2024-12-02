@@ -22,14 +22,30 @@
             <br>
             <label for="input_data">Введите данные:</label>
             <textarea name="input_data" id="input_data" rows="5" cols="40"></textarea>
+            <div id="expressionContainer" style="display: none;">
+                <label for="expression">Введите выражение:</label>
+                <textarea name="expression" id="expression" rows="5" cols="40" placeholder="Введите выражение"></textarea>
+            </div>
+            <div id="segmentsContainer" style="display: none;">
+                <div class="segment">
+                    <input type="text" name="segment_name" placeholder="Имя отрезка (например, P)" style="width: 50px;">
+                    <input type="text" name="segment" placeholder="Отрезок (например, [4, 15])">
+                    <button type="button" class="removeSegment">✖</button>
+                </div>
+            </div>
+            <button type="button" id="addSegment" style="display: none;">➕ Добавить отрезок</button>
+            <br>
+            <label for="search_type">Что вы ищите:</label>
+            <div>
+                <button type="button" class="search_type" data-value="min">Минимум</button>
+                <button type="button" class="search_type" data-value="max">Максимум</button>
+            </div>
+            <input type="hidden" name="search_type" id="search_type_input">
             <br>
             <button type="submit">Решить</button>
         </form>
         <div id="resultContainer"></div>
     </main>
-    <footer>
-        <p>&copy; 2023 Решатель ЕГЭ-15</p>
-    </footer>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
